@@ -22,6 +22,33 @@ class ListaAlunosController{
 
         console.log('-----')
         console.log(target)
+
+        if(target){
+            let _id = parseInt(target.getAttribute('data-id'));
+            let _notas = prompt('digite as novas notas separadas por vírgula');
+            if(!_notas) return;
+                        
+            _notas = _notas.split(',').map( nota => parseFloat(nota));
+            console.log(_notas);
+
+            let aluno = this.model.obeterPorId(_id);
+            aluno.atualizarNotas(_notas);
+
+            this.view.atualiza(this.model)
+        }
         
+    }
+
+    adicionarAluno(nome, notas){
+        this.model.adicionarAluno(new Aluno(nome, notas));
+        this.view.atualiza(this.model);
+    }
+
+    atualizaLista(alunos){
+        this.view.atualiza(alunos)
+    }
+
+    limparFiltro(){
+        this.view.atualiza(this.model);
     }
 }

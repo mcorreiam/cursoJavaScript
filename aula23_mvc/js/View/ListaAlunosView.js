@@ -1,6 +1,6 @@
-class ListaAlunosView {
+class ListaAlunosView extends View {
     constructor(seletor) {
-        this.$seletor = blg.$(seletor);
+        super(seletor);
     }
 
     getTemplate(model) {
