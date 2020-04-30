@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+<!--
+        <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=wzzOElLDzYDArZdSB9gLINqh7JorZ5UuxlD6X8D03kHTjgROtq36tyEgG72pjC1qTln3BKL87P6OrahufXcm-ObCVqClx6QaLyu_Nx38vJOnHykAED2hlhbGomXWb3u7o08c0bxWH9DO5W_itXmAD0TWzNnr0gLORNX9Qf6UyNBaJTujRKNCirA102fPL24NlwSNVfkENS9T-IsQObxy2w" charset="UTF-8"></script>
+        
+-->
+<!--        <script src="beluga2.js"></script>-->
+        
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>      
+        
+    </body>
+    
+    <script>
+        
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "alunos.json");
+        xhr.send(null);
+        xhr.onreadystatechange = verificaAjax;
+        
+        function verificaAjax(){
+            console.log(xhr.readyState);
+            console.log(xhr.status);
+            
+            if(xhr.readyState === 4){
+               if(xhr.status === 200 || xhr.status === 304){
+                   console.log(xhr.responseText);
+                   let resposta = JSON.parse(xhr.responseText);
+                   console.log(resposta[0])
+               }else{
+                   alert("erro")
+               }
+                
+                
+            }
+        }
+        
+    </script>
+    
+    
+</html>
