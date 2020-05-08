@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script src="beluga2.js"></script>
+        <style>
+            #btn{
+                background: green;
+            }
+            #btn[disabled]{
+                background: red;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>      
+        <input type="text" id="text">
+        <button id="btn" disabled="disabled">validar</button>
+        
+    </body>
+    
+    <script>
+        
+        (function(){
+            var $text = blg.$('#text');
+            var $btn = blg.$('#btn');
+            
+            var padraoCPF = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/
+            var padraoEmail = /^[\w._-]+@[\w._-]+\.[\w]{2}/i
+            
+            $text.addEventListener('input', function(){
+                var texto = this.value;
+//                if(padraoCPF.test(texto) || padraoEmail.test(texto)){
+//                    $btn.disabled = false
+//                }else{
+//                    $btn.disabled = true
+//                }
+                $btn.disabled = !(padraoCPF.test(texto) || padraoEmail.test(texto))
+            })
+        })()
+    </script>
+</html>

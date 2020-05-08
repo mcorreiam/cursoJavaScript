@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=AwG6-2sS8Gn9fb6b58lOq-ecX41y8lGtnwB8z-xBQ29o-ZiQF_bjMI3bE-I91dA5F_1QBl0sV220AmAk2xKMnNURVdoeUCPjmdyLc1arZDcYS2ze5CrA-aT2NTSq4JqZ9b0Nx_G2Yur3y1ZDTBF66uFRZhKVXOU_hJFoFY7lXpWrlNB3o1B1yOzPjvyZlvqCq0fM0bHtSPj0foyT4gYpgHTyuadGOXhVWjO5MBIHFVDYN6SpQsnkCfEoPdhS7x8314HpWIqrAl7p6F5Qm2A7Yw" charset="UTF-8"></script><script src="beluga2.js"></script>
+                
+        <style>
+            #btn{
+                background: green;
+            }
+            #btn[disabled]{
+                opacity: .5;
+                background: red;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>      
+        
+       
+    </body>
+    
+<script>
+
+//(function(){
+
+var str = 'hoje é 26/02/2018 e amanha será 27/02/18. Meu aniversario é 1/01';
+var meses = [ 'jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+    
+    function formatData(str){
+        
+        var regex = /(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?/g;
+        return str.replace(regex, function(a,b,c,d,e,f){
+            
+            var dia = b + ' de ' + meses[parseInt(c) - 1];
+            dia += (d) ? ' de ' + d : '';
+            return dia;
+        })
+    }
+    
+    str = formatData(str)
+    
+    console.log(str);
+
+//})()
+
+
+</script>
+    
+    
+</html>
